@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static HouseRentingSystem.Data.Data.AgentConstants;
+using static HouseRentingSystem.Data.AgentConstants;
 namespace HouseRentingSystem.Data.Data.Entities
 {
     public class Agent

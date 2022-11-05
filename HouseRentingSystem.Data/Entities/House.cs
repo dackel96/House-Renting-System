@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static HouseRentingSystem.Data.Data.HouseConstants;
+using static HouseRentingSystem.Data.HouseConstants;
 namespace HouseRentingSystem.Data.Data.Entities
 {
     public class House
