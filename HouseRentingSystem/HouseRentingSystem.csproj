@@ -15,4 +15,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HouseRentingSystem.Core\HouseRentingSystem.Core.csproj" />
+    <ProjectReference Include="..\HouseRentingSystem.Data\HouseRentingSystem.Data.csproj" />
+  </ItemGroup>
+
 </Project>
