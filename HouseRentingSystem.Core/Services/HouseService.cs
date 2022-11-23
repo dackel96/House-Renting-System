@@ -96,6 +96,7 @@ namespace HouseRentingSystem.Core.Services
         {
             var house = new House()
             {
+                AgentId = agentId,
                 Address = model.Address,
                 CategoryId = model.CategoryId,
                 Description = model.Description,
