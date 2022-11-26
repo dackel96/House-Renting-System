@@ -41,5 +41,7 @@ namespace HouseRentingSystem.Data.Data.Entities
         public string? RenterId { get; set; }
         [ForeignKey(nameof(RenterId))]
         public IdentityUser? Renter { get; set; }
+
+        public bool IsActive { get; set; } = true;
     }
 }
