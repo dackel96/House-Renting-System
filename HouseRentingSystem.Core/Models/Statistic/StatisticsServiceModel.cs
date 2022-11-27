@@ -8,8 +8,8 @@ namespace HouseRentingSystem.Core.Models.Statistic
 {
     public class StatisticsServiceModel
     {
-        public int TottalHouses { get; set; }
+        public int TotalHouses { get; set; }
 
-        public int TottalRents { get; set; }
+        public int TotalRents { get; set; }
     }
 }

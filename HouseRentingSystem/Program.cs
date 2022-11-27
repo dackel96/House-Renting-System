@@ -1,6 +1,7 @@
 using HouseRentingSystem.Data;
 using HouseRentingSystem.ModelBinders;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,9 +23,11 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 builder.Services.AddControllersWithViews()
     .AddMvcOptions(options =>
     {
+        options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
         options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
     });
 builder.Services.AddApplicationServices();
+builder.Services.AddResponseCaching();
 
 var app = builder.Build();
 
@@ -46,9 +49,25 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapRazorPages();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+     name: "default",
+     pattern: "{controller=Home}/{action=Index}/{id?}"
+   );
+
+    endpoints.MapControllerRoute(
+      name: "areas",
+      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+    );
+    endpoints.MapControllerRoute(
+     name: "houseDetails",
+     pattern: "House/Details/{id}/{information}"
+   );
+    endpoints.MapRazorPages();
+});
+
+app.UseResponseCaching();
 
 app.Run();

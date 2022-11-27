@@ -26,8 +26,8 @@ namespace HouseRentingSystem.Core.Services
 
             return new StatisticsServiceModel()
             {
-                TottalHouses = tottalHouses,
-                TottalRents = tottalRented
+                TotalHouses = tottalHouses,
+                TotalRents = tottalRented
             };
         }
     }
